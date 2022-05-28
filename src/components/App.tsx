@@ -1,25 +1,28 @@
-import React from 'react';
-import useLocalStorage from 'use-local-storage';
+import React, {useCallback, useMemo} from 'react';
 import './app.scss';
+import {useAppDispatch, useAppSelector} from "../hooks/redux";
+import {selectTheme} from "../redux-modules/app/selectors";
+import {Theme} from "../types/app";
+import {setTheme} from "../redux-modules/app/slice";
 
 
-function App() {
-    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+const App = () => {
+    const theme = useAppSelector(selectTheme);
 
-    const switchTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-    }
+    const dispatch = useAppDispatch();
 
-    return (
+    const handleThemeSwitch = useCallback(() =>
+        dispatch(setTheme(theme === Theme.dark ? Theme.light : Theme.dark)
+        ), [dispatch, theme])
+
+    return useMemo(() => (
         <div className="app" data-theme={theme}>
             <span>Easy Darkmode and Themes in React</span>
-            <button onClick={switchTheme}>
-                Switch to {theme === 'light' ? 'Dark' : 'Light'} Theme
+            <button onClick={handleThemeSwitch}>
+                Switch to {theme === Theme.dark ? 'Dark' : 'Light'} Theme
             </button>
         </div>
-    );
+    ), [theme, handleThemeSwitch]);
 }
 
 export default App;
