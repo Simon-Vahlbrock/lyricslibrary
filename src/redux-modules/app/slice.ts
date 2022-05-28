@@ -1,13 +1,15 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Theme} from "../../types/app";
+import {Tapp, Theme} from "../../types/app";
 import {getInitialTheme} from "../../utils/app";
 
 export interface AppState {
     theme: Theme;
+    selectedTapp: Tapp
 }
 
 const initialState: AppState = {
-    theme: getInitialTheme()
+    theme: getInitialTheme(),
+    selectedTapp: 'related'
 };
 
 const slice = createSlice({
@@ -17,6 +19,9 @@ const slice = createSlice({
         setTheme(state, {payload}: PayloadAction<Theme>) {
             localStorage.setItem('theme', JSON.stringify(payload));
             state.theme = payload;
+        },
+        setTapp(state, {payload}: PayloadAction<Tapp>) {
+            state.selectedTapp = payload;
         }
     }
 });
