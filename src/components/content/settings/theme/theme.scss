@@ -1,0 +1,36 @@
+.theme {
+  display: flex;
+  justify-content: center;
+  color: var(--text-secondary);
+
+  &__card {
+    display: flex;
+    height: 100%;
+
+    &__icon {
+      width: 27vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    &__content {
+      width: 73vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8vw;
+
+      &__theme {
+        border: 2px solid var(--background);
+        padding: 5px 10px;
+        border-radius: 10px;
+
+        &--active {
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+}

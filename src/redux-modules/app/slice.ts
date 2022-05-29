@@ -26,5 +26,5 @@ const slice = createSlice({
     }
 });
 
-export const {setTheme} = slice.actions;
+export const {setTheme, setTapp} = slice.actions;
 export const appReducer = slice.reducer;

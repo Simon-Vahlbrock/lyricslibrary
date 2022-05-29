@@ -1,13 +1,21 @@
 :root {
   --background: white;
+  --background-complementair: black;
   --text-primary: black;
-  --text-secondary: royalblue;
+  --text-secondary: white;
   --accent: purple;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+  --primary-color: #29fd53;
 }
 
 [data-theme='1'] {
   --background: black;
+  --background-complementair: white;
   --text-primary: white;
-  --text-secondary: grey;
+  --text-secondary: black;
   --accent: darkred;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --temp: rgba(255,255,255,0.50);
+  --box-shadow: 0 0 1rem var(--temp);
 }
