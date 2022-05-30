@@ -1,2 +1,43 @@
 .account {
+  display: flex;
+  justify-content: center;
+  color: var(--on-surface-big);
+  margin: 3vh 0;
+  transition: 0.5s;
+
+  &__card {
+    display: flex;
+    height: 100%;
+
+    &__heading {
+      width: 27vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__content {
+      width: 73vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3vw;
+
+      &__sign-in {
+        background-color: var(--primary);
+        border-radius: 10px;
+        padding: 8px;
+        color: var(--on-primary);
+        transition: 0.5s;
+      }
+
+      &__sign-up {
+        background-color: var(--surface-variant);
+        border-radius: 10px;
+        padding: 8px;
+        color: var(--on-surface-variant);
+        transition: 0.5s;
+      }
+    }
+  }
 }
