@@ -3,6 +3,7 @@ import './account.scss';
 import Card from "../../../shared/card/Card";
 import {useAppSelector} from "../../../../hooks/redux";
 import {selectUser} from "../../../../redux-modules/user/selectors";
+import TapWrapper from "../../../shared/tap-wrapper/TapWrapper";
 
 const Account: FC = () => {
     const user = useAppSelector(selectUser)
@@ -19,8 +20,12 @@ const Account: FC = () => {
                             <div>Logged In as {user?.name}</div>
                         ) : (
                             <>
-                                <div className="account__card__content__sign-in">Sign In</div>
-                                <div className="account__card__content__sign-up">Sign Up</div>
+                                <TapWrapper>
+                                    <div className="account__card__content__sign-in">Sign In</div>
+                                </TapWrapper>
+                                <TapWrapper>
+                                    <div className="account__card__content__sign-up">Sign Up</div>
+                                </TapWrapper>
                             </>
                         )}
                     </div>
