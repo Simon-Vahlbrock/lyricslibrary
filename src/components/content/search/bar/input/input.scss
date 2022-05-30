@@ -1,0 +1,35 @@
+.input {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--surface);
+  height: 4vh;
+  width: 70vw;
+
+  &__element {
+    all: unset;
+    padding: 1vh;
+    border: 0;
+    color: var(--on-surface-big);
+  }
+
+  &__element::placeholder {
+    color: var(--on-surface-small);
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+
+    &__temp {
+      color: var(--primary) !important;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+  }
+}

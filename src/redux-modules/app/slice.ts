@@ -4,12 +4,14 @@ import {getInitialTheme} from "../../utils/app";
 
 export interface AppState {
     theme: Theme;
-    selectedTapp: Tapp
+    selectedTapp: Tapp;
+    searchString: string;
 }
 
 const initialState: AppState = {
     theme: getInitialTheme(),
-    selectedTapp: 'related'
+    selectedTapp: 'related',
+    searchString: '',
 };
 
 const slice = createSlice({
@@ -22,9 +24,12 @@ const slice = createSlice({
         },
         setTapp(state, {payload}: PayloadAction<Tapp>) {
             state.selectedTapp = payload;
+        },
+        setSearchString(state, {payload}: PayloadAction<AppState['searchString']>) {
+            state.searchString = payload
         }
     }
 });
 
-export const {setTheme, setTapp} = slice.actions;
+export const {setTheme, setTapp, setSearchString} = slice.actions;
 export const appReducer = slice.reducer;

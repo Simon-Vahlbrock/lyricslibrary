@@ -3,6 +3,7 @@ import './content.scss';
 import {useAppSelector} from "../../hooks/redux";
 import {selectSelectedTapp} from "../../redux-modules/app/selectors";
 import Settings from "./settings/Settings";
+import Search from "./search/Search";
 
 const Content: FC = () => {
     const tapp = useAppSelector(selectSelectedTapp);
@@ -16,7 +17,7 @@ const Content: FC = () => {
             case "related":
                 return <div/>
             case "search":
-                return <div/>
+                return <Search/>
             case "settings":
                 return <Settings/>
             default:

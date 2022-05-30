@@ -1,11 +1,13 @@
 import {configureStore} from '@reduxjs/toolkit'
 import {appReducer} from "./app/slice";
 import {userReducer} from "./user/slice";
+import {songsReducer} from "./songs/slice";
 
 export const store = configureStore({
     reducer: {
         app: appReducer,
-        user: userReducer
+        user: userReducer,
+        songs: songsReducer
     },
     middleware: (getDefaultMiddleware) => {
         const defaultMiddleware = getDefaultMiddleware({
