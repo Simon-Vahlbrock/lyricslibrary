@@ -29,6 +29,7 @@
         padding: 8px;
         color: var(--on-primary);
         transition: 0.5s;
+        cursor: pointer;
       }
 
       &__sign-up {
@@ -37,6 +38,7 @@
         padding: 8px;
         color: var(--on-surface-variant);
         transition: 0.5s;
+        cursor: pointer;
       }
     }
   }

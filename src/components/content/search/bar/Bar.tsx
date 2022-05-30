@@ -1,18 +1,15 @@
 import React, {FC, useMemo} from 'react';
-import {useAppDispatch} from "../../../../hooks/redux";
 import './bar.scss'
 import Input from "./input/Input";
+import Filter from "./filter/Filter";
 
-const Bar: FC = () => {
-
-    const dispatch = useAppDispatch();
-
-    return useMemo(() => (
+const Bar: FC = () =>
+    useMemo(() => (
         <div className="bar">
             <Input styles={{marginTop: "2vh"}}/>
+            <Filter/>
         </div>
     ), []);
-};
 
 Bar.displayName = 'Bar';
 

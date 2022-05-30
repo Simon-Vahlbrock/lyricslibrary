@@ -1,0 +1,13 @@
+.filter-item {
+  font-size: 0.9rem;
+  background-color: var(--surface);
+  padding: 0.3vh 3vw;
+  color: var(--on-surface-small);
+  border-radius: 10px;
+  cursor: pointer;
+
+  &__selected {
+    background-color: var(--primary);
+    color: var(--on-primary);
+  }
+}

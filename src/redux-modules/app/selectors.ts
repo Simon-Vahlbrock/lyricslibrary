@@ -8,3 +8,5 @@ export const selectTheme = (state: RootState): AppState["theme"] => selectAppSta
 export const selectSelectedTapp = (state: RootState): AppState["selectedTapp"] => selectAppState(state).selectedTapp;
 
 export const selectSearchString = (state: RootState): AppState['searchString'] => selectAppState(state).searchString;
+
+export const selectSearchFilter = (state: RootState): AppState["searchFilter"] => selectAppState(state).searchFilter;
