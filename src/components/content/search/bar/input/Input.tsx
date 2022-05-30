@@ -4,6 +4,7 @@ import {CloseOutline, SearchOutline} from "react-ionicons";
 import {useAppDispatch, useAppSelector} from "../../../../../hooks/redux";
 import {selectSearchString} from "../../../../../redux-modules/app/selectors";
 import {setSearchString} from "../../../../../redux-modules/app/slice";
+import TapWrapper from "../../../../shared/tap-wrapper/TapWrapper";
 
 interface InputProps {
     styles?: CSSProperties
@@ -29,12 +30,14 @@ const Input: FC<InputProps> = ({styles}) => {
                 value={searchString}
                 onChange={handleOnChange}
             />
-            <div className="input__icon" onClick={handleIconClick}>
-                {searchString.length > 0 ? (
-                    <CloseOutline cssClasses="input__icon__temp"/>
-                ) : (
-                    <SearchOutline cssClasses="input__icon__temp"/>
-                )}
+            <div className="input__icon" onClick={handleIconClick} >
+                <TapWrapper>
+                    {searchString.length > 0 ? (
+                        <CloseOutline cssClasses="input__icon__ion-icon"/>
+                    ) : (
+                        <SearchOutline cssClasses="input__icon__ion-icon"/>
+                    )}
+                </TapWrapper>
             </div>
         </div>
     ), [handleIconClick, handleOnChange, searchString, styles]);
