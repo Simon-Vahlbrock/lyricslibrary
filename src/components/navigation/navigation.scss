@@ -29,9 +29,10 @@
   width: 70px;
   height: 70px;
   z-index: 1;
+  cursor: pointer;
 }
 
-.navigation ul li a {
+.navigation ul li div {
   position: relative;
   display: flex;
   justify-content: center;
@@ -42,7 +43,7 @@
   font-weight: 500;
 }
 
-.navigation ul li a .icon {
+.navigation ul li div .icon {
   position: relative;
   display: block;
   line-height: 75px;
@@ -52,11 +53,11 @@
   color: var(--on-navigation-icon);
 }
 
-.navigation ul li.active a .icon {
+.navigation ul li.active div .icon {
   transform: translateY(-32px);
 }
 
-.navigation ul li a .text {
+.navigation ul li div .text {
   position: absolute;
   color: var(--on-navigation-text);
   font-weight: 400;
@@ -67,7 +68,7 @@
   transform: translateY(20px);
 }
 
-.navigation ul li.active a .text {
+.navigation ul li.active div .text {
   opacity: 1;
   transform: translateY(10px);
 }

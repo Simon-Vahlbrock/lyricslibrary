@@ -48,44 +48,44 @@ const Navigation: FC = () => {
                 <div className="wrapper">
                     <ul>
                         <li className={homeClasses} onClick={() => handleSelectedTappUpdate('related')}>
-                            <a href="#">
-                        <span className="icon">
-                            <HeartOutline/>
-                        </span>
+                            <div>
+                                <span className="icon">
+                                    <HeartOutline/>
+                                </span>
                                 <span className="text">Home</span>
-                            </a>
+                            </div>
                         </li>
                         <li className={searchClasses} onClick={() => handleSelectedTappUpdate('search')}>
-                            <a href="#">
-                        <span className="icon">
-                            <SearchOutline/>
-                        </span>
+                            <div>
+                                <span className="icon">
+                                    <SearchOutline/>
+                                </span>
                                 <span className="text">Search</span>
-                            </a>
+                            </div>
                         </li>
                         <li className={settingsClasses} onClick={() => handleSelectedTappUpdate('settings')}>
-                            <a href="#">
-                        <span className="icon">
-                            <SettingsOutline/>
-                        </span>
+                            <div>
+                                <span className="icon">
+                                    <SettingsOutline/>
+                                </span>
                                 <span className="text">Settings</span>
-                            </a>
+                            </div>
                         </li>
                         <li className={cashClasses} onClick={() => handleSelectedTappUpdate('donated')}>
-                            <a href="#">
-                        <span className="icon">
-                            <CashOutline/>
-                        </span>
+                            <div>
+                                <span className="icon">
+                                    <CashOutline/>
+                                </span>
                                 <span className="text">Donate</span>
-                            </a>
+                            </div>
                         </li>
                         <li className={otherClasses} onClick={() => handleSelectedTappUpdate('other')}>
-                            <a href="#">
-                        <span className="icon">
-                            <MusicalNotes/>
-                        </span>
+                            <div>
+                                <span className="icon">
+                                    <MusicalNotes/>
+                                </span>
                                 <span className="text">Other</span>
-                            </a>
+                            </div>
                         </li>
                         <div className="indicator"/>
                     </ul>

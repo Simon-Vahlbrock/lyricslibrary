@@ -18,7 +18,7 @@ const Input: FC<InputProps> = ({styles}) => {
     const handleOnChange = useCallback((event: React.FormEvent<HTMLInputElement>) =>
         dispatch(setSearchString(event.currentTarget.value)), [dispatch]);
 
-    const handleIconClick = useCallback(() => dispatch(setSearchString('')), []);
+    const handleIconClick = useCallback(() => dispatch(setSearchString('')), [dispatch]);
 
     return useMemo(() => (
         <div className="input" style={styles}>
