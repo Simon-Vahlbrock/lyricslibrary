@@ -1,27 +1,33 @@
-import React, {FC, useCallback, useMemo} from 'react';
+import React, {FC, useCallback, useEffect, useMemo, useState} from 'react';
 import './theme.scss';
 import Card from "../../../shared/card/Card";
 import {useAppDispatch, useAppSelector} from "../../../../hooks/redux";
 import {selectTheme} from "../../../../redux-modules/app/selectors";
-import clsx from "clsx";
 import {Theme as ThemeType} from '../../../../types/app'
 import {setTheme} from "../../../../redux-modules/app/slice";
+import {motion} from "framer-motion";
 
 const Theme: FC = () => {
+    const [isOn, setIsOn] = useState(false);
+
     const theme = useAppSelector(selectTheme);
+
     const dispatch = useAppDispatch();
 
-    const lightClasses = useMemo(() => clsx('theme__card__content__theme', {
-        'theme__card__content__theme--active': theme === ThemeType.light
-    }), [theme]);
 
-    const darkClasses = useMemo(() => clsx('theme__card__content__theme', {
-        'theme__card__content__theme--active': theme === ThemeType.dark
-    }), [theme]);
+    const toggleSwitch = useCallback(() => {
+        dispatch(setTheme(isOn ? ThemeType.light : ThemeType.dark));
+    }, [dispatch, isOn]);
 
-    const handleThemeChange = useCallback((newTheme: ThemeType) => {
-        dispatch(setTheme(newTheme));
-    }, [dispatch])
+    const spring = useMemo(() => ({
+        type: "spring",
+        stiffness: 700,
+        damping: 30
+    }), []);
+
+    useEffect(() => {
+        setIsOn(theme === ThemeType.dark);
+    }, [theme]);
 
     return useMemo(() => (
         <div className="theme">
@@ -31,13 +37,14 @@ const Theme: FC = () => {
                         Theme
                     </div>
                     <div className="theme__card__content">
-                        <div className={lightClasses} onClick={() => handleThemeChange(ThemeType.light)}>Light</div>
-                        <div className={darkClasses} onClick={() => handleThemeChange(ThemeType.dark)}>Dark</div>
+                        <div className="theme__card__content__switch" data-isOn={isOn} onClick={toggleSwitch}>
+                            <motion.div className="theme__card__content__switch__handle" layout transition={spring}/>
+                        </div>
                     </div>
                 </div>
             </Card>
         </div>
-    ), [lightClasses, darkClasses, handleThemeChange])
+    ), [isOn, spring, toggleSwitch])
 };
 
 Theme.displayName = 'Theme';
