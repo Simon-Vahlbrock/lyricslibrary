@@ -4,31 +4,33 @@ import {useAppSelector} from "../../hooks/redux";
 import {selectSelectedTapp} from "../../redux-modules/app/selectors";
 import Settings from "./settings/Settings";
 import Search from "./search/Search";
+import {AnimatePresence} from "framer-motion";
+import MountWrapper from "../shared/mount-wrapper/MountWrapper";
 
 const Content: FC = () => {
     const tapp = useAppSelector(selectSelectedTapp);
 
-    const content = useMemo(() => {
-        switch (tapp) {
-            case "donated":
-                return <div/>
-            case "other":
-                return <div/>
-            case "related":
-                return <div/>
-            case "search":
-                return <Search/>
-            case "settings":
-                return <Settings/>
-            default:
-                return <div/>
-        }
-    }, [tapp]);
     return useMemo(() => (
-        <div className="content">
-            {content}
-        </div>
-    ), [content])
+        <AnimatePresence>
+            <div className="content">
+                {tapp === "related" && (
+                    <MountWrapper><div/></MountWrapper>
+                )}
+                {tapp === 'search' && (
+                    <MountWrapper><Search/></MountWrapper>
+                )}
+                {tapp === "settings" && (
+                    <MountWrapper><Settings/></MountWrapper>
+                )}
+                {tapp === "donated" && (
+                    <MountWrapper><div/></MountWrapper>
+                )}
+                {tapp === "other" && (
+                    <MountWrapper><div/></MountWrapper>
+                )}
+            </div>
+        </AnimatePresence>
+    ), [tapp])
 };
 
 Content.displayName = 'Content';
