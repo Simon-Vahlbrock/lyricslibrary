@@ -5,6 +5,7 @@
   color: var(--on-surface-small);
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: var(--box-shadow);
 
   &__selected {
     background-color: var(--primary);

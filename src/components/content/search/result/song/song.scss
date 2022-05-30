@@ -1,0 +1,47 @@
+.song {
+  background-color: var(--surface);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1.7vh;
+  height: 7vh;
+  width: 85vw;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+
+    color: var(--on-surface-big);
+  }
+
+  &__info {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      height: 60%;
+      font-size: 1.1rem;
+      color: var(--on-surface-big)
+    }
+
+    &__creator {
+      color: var(--on-surface-small);
+
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    width: 50px;
+  }
+
+}
