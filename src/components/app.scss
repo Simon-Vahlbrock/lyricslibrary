@@ -1,9 +1,9 @@
 .app {
-  color: var(--text-primary);
   background-color: var(--background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  transition: 0.5s;
 }

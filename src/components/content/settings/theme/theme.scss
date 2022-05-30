@@ -1,18 +1,18 @@
 .theme {
   display: flex;
   justify-content: center;
-  color: var(--text-secondary);
+  color: var(--on-surface-big);
+  transition: 0.5s;
 
   &__card {
     display: flex;
     height: 100%;
 
-    &__icon {
+    &__heading {
       width: 27vw;
       display: flex;
       justify-content: center;
       align-items: center;
-
     }
 
     &__content {
@@ -20,28 +20,28 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8vw;
 
       &__switch {
         width: 25vw;
         height: 60%;
-        background-color: rgba(210, 208, 208, 0.8);
+        background-color: var(--surface-variant);
         display: flex;
         justify-content: flex-start;
         border-radius: 50px;
         padding: 8px;
         cursor: pointer;
         align-items: center;
+        transition: 0.5s;
 
         &__handle {
           width: 45%;
           height: 100%;
-          background-color: var(--primary-color);
+          background-color: var(--primary);
           border-radius: 40px;
         }
       }
 
-      &__switch[data-isOn="true"] {
+      &__switch[data-is-on="true"] {
         justify-content: flex-end;
       }
 

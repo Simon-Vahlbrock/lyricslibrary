@@ -33,11 +33,11 @@ const Theme: FC = () => {
         <div className="theme">
             <Card>
                 <div className="theme__card">
-                    <div className="theme__card__icon">
+                    <div className="theme__card__heading">
                         Theme
                     </div>
                     <div className="theme__card__content">
-                        <div className="theme__card__content__switch" data-isOn={isOn} onClick={toggleSwitch}>
+                        <div className="theme__card__content__switch" data-is-on={isOn} onClick={toggleSwitch}>
                             <motion.div className="theme__card__content__switch__handle" layout transition={spring}/>
                         </div>
                     </div>
