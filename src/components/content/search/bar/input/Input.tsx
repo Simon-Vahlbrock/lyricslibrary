@@ -19,6 +19,13 @@ const Input: FC<InputProps> = ({styles}) => {
         dispatch(setSearchString(event.currentTarget.value)), [dispatch]);
 
     const handleIconClick = useCallback(() => dispatch(setSearchString('')), [dispatch]);
+    
+    const handleOnEnter = useCallback((event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") {
+            // @ts-ignore blur does exist on input
+            event.target.blur();
+        }
+    }, [])
 
     return useMemo(() => (
         <div className="input" style={styles}>
@@ -28,6 +35,7 @@ const Input: FC<InputProps> = ({styles}) => {
                 placeholder="Search for a song"
                 value={searchString}
                 onChange={handleOnChange}
+                onKeyUp={handleOnEnter}
             />
             <div className="input__icon" onClick={handleIconClick} >
                 <TapWrapper>
@@ -39,7 +47,7 @@ const Input: FC<InputProps> = ({styles}) => {
                 </TapWrapper>
             </div>
         </div>
-    ), [handleIconClick, handleOnChange, searchString, styles]);
+    ), [handleIconClick, handleOnChange, handleOnEnter, searchString, styles]);
 };
 
 Input.displayName = 'Input';
