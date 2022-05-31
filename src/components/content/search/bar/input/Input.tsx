@@ -26,7 +26,6 @@ const Input: FC<InputProps> = ({styles}) => {
                 className="input__element"
                 type="text"
                 placeholder="Search for a song"
-                autoFocus
                 value={searchString}
                 onChange={handleOnChange}
             />
