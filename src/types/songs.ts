@@ -3,5 +3,6 @@ export interface Song {
     creator: string;
     lyrics: string;
     title: string;
-    isFavourite: boolean
+    isFavourite: boolean;
+    link: string;
 }
