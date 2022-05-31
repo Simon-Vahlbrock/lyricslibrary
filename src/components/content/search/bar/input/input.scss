@@ -5,13 +5,14 @@
   box-shadow: var(--box-shadow);
   background-color: var(--surface);
   height: 4vh;
+  min-height: 40px;
   width: 70vw;
 
   &__element {
     all: unset;
-    padding: 1vh;
     border: 0;
     color: var(--on-surface-big);
+    padding-left: 10px;
   }
 
   &__element::placeholder {
@@ -22,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1vh;
+    padding: 10px;
     background-color: var(--on-surface-small);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;

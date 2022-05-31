@@ -6,7 +6,7 @@ import Filter from "./filter/Filter";
 const Bar: FC = () =>
     useMemo(() => (
         <div className="bar">
-            <Input styles={{marginTop: "2vh"}}/>
+            <Input styles={{marginTop: "24px"}}/>
             <Filter/>
         </div>
     ), []);

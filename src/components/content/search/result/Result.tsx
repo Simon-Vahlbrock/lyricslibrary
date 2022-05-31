@@ -21,11 +21,11 @@ const Result: FC = () => {
                     />
                 ))
             ) : (
-                <>{searchString.length < 3 ? (
+                <div className="result__no-content">{searchString.length < 3 ? (
                     <div>Search For A Song</div>
                 ) : (
                     <div>Nothing matches your input</div>
-                )}</>
+                )}</div>
             )}
         </div>
     ), [searchString.length, songs]);
