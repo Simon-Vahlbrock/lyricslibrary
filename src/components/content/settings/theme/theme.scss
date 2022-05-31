@@ -9,21 +9,23 @@
     height: 100%;
 
     &__heading {
-      width: 27vw;
+      width: 27%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     &__content {
-      width: 73vw;
+      width: 73%;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: flex-end;
+      padding-right: 4vw;
 
       &__switch {
-        width: 25vw;
-        height: 60%;
+        width: 80px;
+        max-width: 80px;
+        height: 50%;
         background-color: var(--surface-variant);
         display: flex;
         justify-content: flex-start;
