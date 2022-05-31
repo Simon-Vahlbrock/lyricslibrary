@@ -1,8 +1,9 @@
-import React, {FC, useMemo} from "react";
+import React, {FC, useCallback, useMemo} from "react";
 import {useAppSelector} from "../../../hooks/redux";
 import {selectSelectedSong} from "../../../redux-modules/songs/selectors";
 import "./lyrics.scss"
 import {Heart, HeartOutline, PlayCircleOutline, ShareSocial} from "react-ionicons";
+import TapWrapper from "../../shared/tap-wrapper/TapWrapper";
 
 const Lyrics: FC = () => {
     const selectedSong = useAppSelector(selectSelectedSong);
@@ -12,8 +13,10 @@ const Lyrics: FC = () => {
             <div className="lyrics__selected">
                 <div className="lyrics__selected__head">
                     <div className="lyrics__selected__head__icons">
-                        <div className="lyrics__selected__head__icons__icon">
-                            <PlayCircleOutline cssClasses="ion-icon"/>
+                        <div className="lyrics__selected__head__icons__icon" onClick={() => window.open(selectedSong.link)?.focus()}>
+                            <TapWrapper>
+                                <PlayCircleOutline cssClasses="ion-icon"/>
+                            </TapWrapper>
                         </div>
                         <div className="lyrics__selected__head__icons__icon">{
                             selectedSong.isFavourite ? (
