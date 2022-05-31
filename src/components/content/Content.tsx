@@ -6,6 +6,7 @@ import Settings from "./settings/Settings";
 import Search from "./search/Search";
 import {AnimatePresence} from "framer-motion";
 import MountWrapper from "../shared/mount-wrapper/MountWrapper";
+import Lyrics from "./lyrics/Lyrics";
 
 const Content: FC = () => {
     const tapp = useAppSelector(selectSelectedTapp);
@@ -25,8 +26,8 @@ const Content: FC = () => {
                 {tapp === "donated" && (
                     <MountWrapper><div/></MountWrapper>
                 )}
-                {tapp === "other" && (
-                    <MountWrapper><div/></MountWrapper>
+                {tapp === "lyrics" && (
+                    <MountWrapper><Lyrics/></MountWrapper>
                 )}
             </div>
         </AnimatePresence>

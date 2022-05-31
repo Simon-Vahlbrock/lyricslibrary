@@ -35,7 +35,7 @@ const Navigation: FC = () => {
     });
 
     const otherClasses = clsx('list', {
-        'active': tapp === 'other'
+        'active': tapp === 'lyrics'
     });
 
     const handleSelectedTappUpdate = useCallback((value: Tapp) => {
@@ -63,6 +63,14 @@ const Navigation: FC = () => {
                                 <span className="text">Search</span>
                             </div>
                         </li>
+                        <li className={otherClasses} onClick={() => handleSelectedTappUpdate('lyrics')}>
+                            <div>
+                                <span className="icon">
+                                    <MusicalNotes/>
+                                </span>
+                                <span className="text">Lyrics</span>
+                            </div>
+                        </li>
                         <li className={settingsClasses} onClick={() => handleSelectedTappUpdate('settings')}>
                             <div>
                                 <span className="icon">
@@ -77,14 +85,6 @@ const Navigation: FC = () => {
                                     <CashOutline/>
                                 </span>
                                 <span className="text">Donate</span>
-                            </div>
-                        </li>
-                        <li className={otherClasses} onClick={() => handleSelectedTappUpdate('other')}>
-                            <div>
-                                <span className="icon">
-                                    <MusicalNotes/>
-                                </span>
-                                <span className="text">Other</span>
                             </div>
                         </li>
                         <div className="indicator"/>

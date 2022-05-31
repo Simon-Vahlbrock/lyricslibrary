@@ -5,7 +5,7 @@ export enum Theme {
 
 export type SearchFilterNames = 'all' | 'songs' | 'artists';
 
-export type Tapp = 'related' | 'search' | 'settings' | 'donated' | 'other';
+export type Tapp = 'related' | 'search' | 'settings' | 'donated' | 'lyrics';
 
 export interface SearchFilter {
     id: number;
