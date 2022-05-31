@@ -17,7 +17,6 @@ const initialState: AppState = {
         {id: 0, type: "all", isSelected: true},
         {id: 1, type: "songs", isSelected: false},
         {id: 2, type: "artists", isSelected: false},
-        {id: 3, type: "favourites", isSelected: false},
     ]
 };
 

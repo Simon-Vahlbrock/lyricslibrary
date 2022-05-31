@@ -3,7 +3,7 @@ export enum Theme {
     dark
 }
 
-export type SearchFilterNames = 'all' | 'songs' | 'artists' | 'favourites';
+export type SearchFilterNames = 'all' | 'songs' | 'artists';
 
 export type Tapp = 'related' | 'search' | 'settings' | 'donated' | 'other';
 

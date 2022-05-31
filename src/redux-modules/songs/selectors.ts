@@ -14,21 +14,13 @@ export const selectSongsForSearch = (state: RootState): SongsState["songsForSear
 export const selectFilteredSongs = createSelector(
     [selectActiveSearchFilter, selectSearchString, selectSongsForSearch, selectFavouriteSongs],
     (searchFilter, searchString, songs, favouriteSongs) => {
-        console.log(searchFilter)
         const type = searchFilter?.type;
 
-        if (type && searchString.length >= 3) {
-            if (type === 'favourites') {
-                return favouriteSongs?.filter(({creator, title}) => {
-                    return creator.includes(searchString) && title.includes(searchString);
-                })
-            } else {
-                console.log(songs)
-                return songs?.filter(({creator, title}) => {
-                    return (title.toLowerCase().includes(searchString.toLowerCase()) && (type === 'all' || type === 'songs'))
-                        || (creator.toLowerCase().includes(searchString.toLowerCase()) && (type === 'all' || type === 'artists'));
-                });
-            }
+        if (type && searchString.length >= 2) {
+            return songs?.filter(({creator, title}) => {
+                return (title.toLowerCase().includes(searchString.toLowerCase()) && (type === 'all' || type === 'songs'))
+                    || (creator.toLowerCase().includes(searchString.toLowerCase()) && (type === 'all' || type === 'artists'));
+            });
         } else {
             return [];
         }
