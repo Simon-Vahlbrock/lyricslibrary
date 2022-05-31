@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useMemo} from "react";
+import React, {FC, useMemo} from "react";
 import {useAppSelector} from "../../../hooks/redux";
 import {selectSelectedSong} from "../../../redux-modules/songs/selectors";
 import "./lyrics.scss"
