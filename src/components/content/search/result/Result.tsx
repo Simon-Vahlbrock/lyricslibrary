@@ -12,12 +12,10 @@ const Result: FC = () => {
     return useMemo(() => (
         <div className="result">
             {songs && songs.length > 0 ? (
-                songs?.map(({title, id, creator, isFavourite}) => (
+                songs?.map((song) => (
                     <Song
-                        key={id}
-                        creator={creator}
-                        title={title}
-                        isFavourite={isFavourite}
+                        key={song.id}
+                        song={song}
                     />
                 ))
             ) : (

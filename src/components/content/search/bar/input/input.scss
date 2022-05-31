@@ -1,4 +1,5 @@
 .input {
+  display: -webkit-flex;
   display: flex;
   justify-content: space-between;
   border-radius: 10px;
@@ -13,6 +14,7 @@
     border: 0;
     color: var(--on-surface-big);
     padding-left: 10px;
+    -webkit-flex: 1;
   }
 
   &__element::placeholder {

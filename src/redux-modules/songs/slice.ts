@@ -6,6 +6,7 @@ export interface SongsState {
     songsForSearch?: Song[];
     favouriteSongs?: Song[];
     recentSongs?: Song[];
+    selectedSongId?: Song["id"];
 }
 
 const initialState: SongsState = {
@@ -24,9 +25,12 @@ const slice = createSlice({
         },
         setRecentSongs(state, {payload}: PayloadAction<Song[]>) {
             state.recentSongs = payload;
+        },
+        setSelectedSongId(state, {payload}: PayloadAction<Song["id"]>) {
+            state.selectedSongId = payload;
         }
     }
 });
 
-export const {setSongsForSearch, setFavouriteSongs, setRecentSongs} = slice.actions;
+export const {setSongsForSearch, setFavouriteSongs, setRecentSongs, setSelectedSongId} = slice.actions;
 export const songsReducer = slice.reducer;

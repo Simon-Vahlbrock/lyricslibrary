@@ -3,15 +3,23 @@ import './song.scss'
 import {Song as SongType} from "../../../../../types/songs";
 import TapWrapper from "../../../../shared/tap-wrapper/TapWrapper";
 import {Heart} from "react-ionicons";
+import {useAppDispatch} from "../../../../../hooks/redux";
+import {setSelectedSongId} from "../../../../../redux-modules/songs/slice";
+import {setTapp} from "../../../../../redux-modules/app/slice";
 
 interface SongProps {
-    creator: SongType["creator"];
-    title: SongType["title"];
-    isFavourite: SongType["isFavourite"];
+    song: SongType
 }
 
-const Song: FC<SongProps> = ({title, creator, isFavourite}) => {
-    const handleOnClick = useCallback(() => console.log('Switch to Song'), []);
+const Song: FC<SongProps> = ({song}) => {
+    const {creator, id, title, isFavourite} = song;
+
+    const dispatch = useAppDispatch();
+
+    const handleOnClick = useCallback(() => {
+        dispatch(setSelectedSongId(id));
+        dispatch(setTapp("lyrics"));
+    }, [dispatch, id]);
 
     return useMemo(() => (
         <TapWrapper scale={0.9}>
@@ -27,7 +35,7 @@ const Song: FC<SongProps> = ({title, creator, isFavourite}) => {
                 </div>
                 {isFavourite && (
                     <div className="song__icon">
-                        <Heart color="#29fd53" />
+                        <Heart color="#29fd53"/>
                     </div>
                 )}
             </div>
