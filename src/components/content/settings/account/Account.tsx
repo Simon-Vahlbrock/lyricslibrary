@@ -1,13 +1,19 @@
-import React, {FC, useMemo} from 'react';
+import React, {FC, useCallback, useMemo} from 'react';
 import './account.scss';
 import Card from "../../../shared/card/Card";
-import {useAppSelector} from "../../../../hooks/redux";
+import {useAppDispatch, useAppSelector} from "../../../../hooks/redux";
 import {selectUser} from "../../../../redux-modules/user/selectors";
 import TapWrapper from "../../../shared/tap-wrapper/TapWrapper";
+import {setDialogContentType} from "../../../../redux-modules/app/slice";
 
 const Account: FC = () => {
-    const user = useAppSelector(selectUser)
+    const user = useAppSelector(selectUser);
 
+    const dispatch = useAppDispatch();
+    
+    const handleSignInClick = useCallback(() => (dispatch(setDialogContentType('Sign In'))), [dispatch]);
+    const handleSignUpClick = useCallback(() => (dispatch(setDialogContentType('Sign Up'))), [dispatch]);
+    
     return useMemo(() => (
         <div className="account">
             <Card>
@@ -21,10 +27,10 @@ const Account: FC = () => {
                         ) : (
                             <>
                                 <TapWrapper>
-                                    <div className="account__card__content__sign-in">Sign In</div>
+                                    <div onClick={handleSignInClick} className="account__card__content__sign-in">Sign In</div>
                                 </TapWrapper>
                                 <TapWrapper>
-                                    <div className="account__card__content__sign-up">Sign Up</div>
+                                    <div onClick={handleSignUpClick} className="account__card__content__sign-up">Sign Up</div>
                                 </TapWrapper>
                             </>
                         )}
@@ -32,7 +38,7 @@ const Account: FC = () => {
                 </div>
             </Card>
         </div>
-    ), [user])
+    ), [handleSignInClick, handleSignUpClick, user])
 };
 
 Account.displayName = 'Account';

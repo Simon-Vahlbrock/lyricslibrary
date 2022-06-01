@@ -12,5 +12,7 @@ export const selectSearchString = (state: RootState): AppState['searchString'] =
 
 export const selectSearchFilter = (state: RootState): AppState["searchFilter"] => selectAppState(state).searchFilter;
 
+export const selectDialogContentType = (state: RootState): AppState["dialogContentType"] => selectAppState(state).dialogContentType;
+
 export const selectActiveSearchFilter = (state: RootState): SearchFilter | undefined =>
     selectSearchFilter(state).find(({isSelected}) => isSelected);

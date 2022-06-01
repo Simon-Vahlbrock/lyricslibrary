@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {SearchFilter, SearchFilterNames, Tapp, Theme} from "../../types/app";
+import {DialogContent, SearchFilter, SearchFilterNames, Tapp, Theme} from "../../types/app";
 import {getInitialTheme} from "../../utils/app";
 
 export interface AppState {
@@ -7,6 +7,7 @@ export interface AppState {
     selectedTapp: Tapp;
     searchString: string;
     searchFilter: SearchFilter[];
+    dialogContentType: DialogContent | null;
 }
 
 const initialState: AppState = {
@@ -17,7 +18,8 @@ const initialState: AppState = {
         {id: 0, type: "all", isSelected: true},
         {id: 1, type: "songs", isSelected: false},
         {id: 2, type: "artists", isSelected: false},
-    ]
+    ],
+    dialogContentType: null,
 };
 
 const slice = createSlice({
@@ -40,9 +42,12 @@ const slice = createSlice({
                 type,
                 isSelected: payload === type
             }))
+        },
+        setDialogContentType(state, {payload}: PayloadAction<DialogContent | null>) {
+            state.dialogContentType = payload;
         }
     }
 });
 
-export const {setTheme, setTapp, setSearchString, setSearchFilterSelectedState} = slice.actions;
+export const {setTheme, setTapp, setSearchString, setSearchFilterSelectedState, setDialogContentType} = slice.actions;
 export const appReducer = slice.reducer;

@@ -12,3 +12,5 @@ export interface SearchFilter {
     type: SearchFilterNames;
     isSelected: boolean;
 }
+
+export type DialogContent = 'Sign In' | 'Sign Up';
