@@ -1,6 +1,5 @@
 import React, {FC, useCallback, useMemo} from "react";
 import './dialog.scss';
-import clsx from "clsx";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {selectDialogContentType} from "../../redux-modules/app/selectors";
 import {setDialogContentType} from "../../redux-modules/app/slice";
