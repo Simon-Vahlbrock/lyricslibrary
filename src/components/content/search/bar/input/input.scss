@@ -1,0 +1,42 @@
+.input {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--surface);
+  height: 4vh;
+  min-height: 40px;
+  width: 70vw;
+
+  &__element {
+    all: unset;
+    border: 0;
+    color: var(--on-surface-big);
+    padding-left: 10px;
+    -webkit-flex: 1;
+  }
+
+  &__element::placeholder {
+    color: var(--on-surface-small);
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--on-surface-small);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+
+    &__ion-icon {
+      color: var(--primary) !important;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+  }
+}
