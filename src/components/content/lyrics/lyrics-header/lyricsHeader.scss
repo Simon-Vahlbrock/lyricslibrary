@@ -1,0 +1,48 @@
+.lyrics-header {
+  background-color: var(--lyrics-head);
+  width: 100vw;
+  position: relative;
+
+  &__icons {
+    position: absolute;
+    padding: 8px 4px 0 0;
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+    left: 85vw;
+
+    @media (max-width: 360px) {
+      left: 68vw;
+    }
+
+    &__icon {
+      background-color: var(--on-surface-small);
+      padding: 3px;
+      border-radius: 15px;
+    }
+  }
+
+  &__title {
+    padding-top: 4px;
+    position: absolute;
+    color: var(--primary);
+    font-size: 1.5rem;
+    padding-left: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+    &__creator {
+      position: absolute;
+      color: var(--on-surface-big);
+      padding-left: 16px;
+    }
+}
+
+.ion-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

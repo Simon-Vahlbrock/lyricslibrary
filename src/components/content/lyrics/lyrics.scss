@@ -3,59 +3,6 @@
 
   &__selected {
     height: 100%;
-
-    &__head {
-      background-color: #2d2d2d;
-      height: 15vh;
-      display: flex;
-      flex-direction: column;
-
-      &__icons {
-        padding: 4px 4px 0 0;
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        gap: 3vw;
-        align-items: center;
-
-
-        &__icon {
-          background-color: var(--on-surface-small);
-          padding: 3px;
-          border-radius: 15px;
-        }
-      }
-
-      &__title {
-        flex: 1;
-        color: var(--primary);
-        font-size: 1.5rem;
-        padding-left: 16px;
-      }
-
-      &__creator {
-        flex: 1;
-        color: var(--on-surface-big);
-        padding-left: 16px;
-      }
-    }
-
-    &__text {
-      display: flex;
-      justify-content: center;
-
-      &__content {
-        height: calc(85vh - 70px);
-        padding: 12px 12px 45px;
-        color: var(--on-surface-small);
-        white-space: pre-line;
-        overflow: auto;
-      }
-
-      &__content::-webkit-scrollbar {
-        display: none;
-      }
-    }
   }
 
   &__not-selected {
@@ -67,9 +14,3 @@
   }
 }
 
-.ion-icon {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

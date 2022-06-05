@@ -862,7 +862,7 @@ export const songs: Song[] = [
     {
         id: 13,
         title: "Fairytale",
-        creator: ' Alexander Rybak\n',
+        creator: ' Alexander Rybak',
         lyrics: "Years ago\n" +
             "When I was younger\n" +
             "I kinda liked\n" +
@@ -894,5 +894,66 @@ export const songs: Song[] = [
             "I'm already cursed",
         isFavourite: true,
         link: 'https://www.youtube.com/watch?v=2DaRhiCKGMk'
+    },
+    {
+        id: 14,
+        title: "Viva La Vida",
+        creator: 'Coldplay',
+        lyrics: "I used to rule the world\n" +
+            "Seas would rise when I gave the word\n" +
+            "Now in the morning, I sleep alone\n" +
+            "Sweep the streets I used to own\n" +
+            "\n" +
+            "I used to roll the dice\n" +
+            "Feel the fear in my enemy's eyes\n" +
+            "Listen as the crowd would sing\n" +
+            "Now the old king is dead, long live the king\n" +
+            "One minute I held the key\n" +
+            "Next the walls were closed on me\n" +
+            "And I discovered that my castles stand\n" +
+            "Upon pillars of salt and pillars of sand\n" +
+            "\n" +
+            "I hear Jerusalem bells are ringing\n" +
+            "Roman Cavalry choirs are singing\n" +
+            "Be my mirror, my sword and shield\n" +
+            "My missionaries in a foreign field\n" +
+            "For some reason I can't explain\n" +
+            "Once you'd gone, there was never, never an honest word\n" +
+            "And that was when I ruled the world\n" +
+            "\n" +
+            "It was the wicked and wild wind\n" +
+            "Blew down the doors to let me in\n" +
+            "Shattered windows and the sound of drums\n" +
+            "People couldn't believe what I'd become\n" +
+            "Revolutionaries wait\n" +
+            "For my head on a silver plate\n" +
+            "Just a puppet on a lonely string\n" +
+            "Oh, who would ever want to be king?\n" +
+            "\n" +
+            "I hear Jerusalem bells are ringing\n" +
+            "Roman Calvary choirs are singing\n" +
+            "Be my mirror, my sword and shield\n" +
+            "My missionaries in a foreign field\n" +
+            "For some reason I can't explain\n" +
+            "I know Saint Peter won't call my name\n" +
+            "Never an honest word\n" +
+            "But that was when I ruled the world\n" +
+            "\n" +
+            "Oh-oh-oh, oh-oh, oh\n" +
+            "Oh-oh-oh, oh-oh, oh\n" +
+            "Oh-oh-oh, oh-oh, oh\n" +
+            "Oh-oh-oh, oh-oh, oh\n" +
+            "Oh-oh-oh, oh-oh, oh\n" +
+            "\n" +
+            "Hear Jerusalem bells are ringing\n" +
+            "Roman Calvary choirs are singing\n" +
+            "Be my mirror, my sword and shield\n" +
+            "My missionaries in a foreign field\n" +
+            "For some reason I can't explain\n" +
+            "I know Saint Peter won't call my name\n" +
+            "Never an honest word\n" +
+            "But that was when I ruled the world",
+        isFavourite: true,
+        link: 'https://www.youtube.com/watch?v=dvgZkm1xWPE'
     },
 ]

@@ -1,0 +1,1 @@
+export const MAX_OFFSET = 67;
