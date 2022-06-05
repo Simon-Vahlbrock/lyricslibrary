@@ -5,7 +5,7 @@
     height: 100%;
 
     &__head {
-      background-color: #2d2d2d;
+      background-color: var(--lyrics-head);
       height: 15vh;
       display: flex;
       flex-direction: column;
