@@ -13,8 +13,10 @@
     all: unset;
     border: 0;
     color: var(--on-surface-big);
-    padding-left: 10px;
+    padding: 0 10px;
     -webkit-flex: 1;
+    max-width: calc(70vw - 60px);
+    flex: 1;
   }
 
   &__element::placeholder {
