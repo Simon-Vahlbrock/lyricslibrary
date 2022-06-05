@@ -30,6 +30,7 @@
         color: var(--on-primary);
         transition: 0.5s;
         cursor: pointer;
+        box-shadow: var(--box-shadow);
       }
 
       &__sign-up {
@@ -39,6 +40,7 @@
         color: var(--on-surface-variant);
         transition: 0.5s;
         cursor: pointer;
+        box-shadow: var(--box-shadow);
       }
     }
   }
