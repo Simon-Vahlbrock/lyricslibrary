@@ -24,7 +24,7 @@
 
       &__switch {
         width: 80px;
-        max-width: 80px;
+        max-width: 60px;
         height: 50%;
         background-color: var(--surface-variant);
         display: flex;
@@ -36,10 +36,15 @@
         transition: 0.5s;
 
         &__handle {
-          width: 45%;
-          height: 100%;
+          width: 50%;
           background-color: var(--primary);
           border-radius: 40px;
+        }
+
+        &__handle:after {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
         }
       }
 
