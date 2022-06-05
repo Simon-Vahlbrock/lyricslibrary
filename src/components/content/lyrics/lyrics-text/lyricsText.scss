@@ -1,0 +1,15 @@
+.lyrics-text {
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    padding: 16px 12px 45px;
+    color: var(--on-surface-small);
+    white-space: pre-line;
+    overflow: auto;
+  }
+
+  &__content::-webkit-scrollbar {
+    display: none;
+  }
+}
