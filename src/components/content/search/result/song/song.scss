@@ -9,16 +9,6 @@
   cursor: pointer;
   display: flex;
 
-  &__image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24%;
-    max-width: 100%;
-
-    color: var(--on-surface-big);
-  }
-
   &__info {
     padding-left: 10px;
     width: auto;

@@ -24,7 +24,6 @@ const Song: FC<SongProps> = ({song}) => {
     return useMemo(() => (
         <TapWrapper scale={0.9}>
             <div className="song" onClick={handleOnClick}>
-                <div className="song__image">Image</div>
                 <div className="song__info">
                     <div className="song__info__title">
                         {title}
